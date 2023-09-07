@@ -69,14 +69,14 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Update()
     {
-        if (p.healthPoints.Value != healthPoints)
-        {
-            StartCoroutine(Pulse());
-            healthPoints = p.healthPoints.Value;
-            healthText.text = "";
-        }
+        //if (p.healthPoints.Value != healthPoints)
+        //{
+        //    StartCoroutine(Pulse());
+        //    healthPoints = p.healthPoints.Value;
+        //    healthText.text = "";
+        //}
 
-        if (p.requireSpawn.Value && forceSpawn == false) StartCoroutine(Spawn());
+        //if (p.requireSpawn.Value && forceSpawn == false) StartCoroutine(Spawn());
 
         // Inputs
         Vector2 mousePos    = new Vector2(Input.GetAxis("Mouse X") * sensitivity.x, Input.GetAxis("Mouse Y") * sensitivity.y);
@@ -283,10 +283,10 @@ public class PlayerMovement : NetworkBehaviour
 
     private IEnumerator Spawn()
     {
-        transform.position = p.spawnPosition.Value;
+        //transform.position = p.spawnPosition.Value;
         forceSpawn = true;
 
-        p.SetSpawnPositionServerRPC(false, new Vector3(0, 0, 0));
+        //p.SetSpawnPositionServerRPC(false, new Vector3(0, 0, 0));
 
         yield return new WaitForSeconds(1);
 

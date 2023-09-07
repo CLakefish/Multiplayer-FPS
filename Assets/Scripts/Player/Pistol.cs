@@ -14,8 +14,8 @@ public class Pistol : WeaponBase
 
         if (player.collider.TryGetComponent<PlayerNetwork>(out PlayerNetwork damage))
         {
-            damage.DamageServerRPC(1);
-            damage.CheckDeathServerRPC();
+            //damage.DamageServerRPC(1);
+            //damage.CheckDeathServerRPC();
         }
     }
 }
