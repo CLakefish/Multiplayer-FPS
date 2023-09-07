@@ -33,9 +33,8 @@ public class PlayerNetwork : NetworkBehaviour
     void Update()
     {
         if (IsOwner) networkPosition.Value = transform.position;
-        else transform.position = Vector3.SmoothDamp(transform.position, networkPosition.Value, ref currentVelocity, 0.02f);
+        else transform.position = Vector3.SmoothDamp(transform.position, networkPosition.Value, ref currentVelocity, 0.05f);
     }
-
 
     public void StartRound()
     {
